@@ -45,6 +45,6 @@ Route::post('/save/gambar', [UploadController::class, 'saveGambar'])->name('save
 Route::post('/save/dokumen', [UploadController::class, 'saveDokumen'])->name('save.doc');
 
 Route::get('dokumen/persiapan/{file}', [PersiapanController::class, 'download']);
-Route::get('dokumen/persiapan/{file}', [PelatihanController::class, 'download']);
-Route::get('dokumen/persiapan/{file}', [PendataanController::class, 'download']);
-Route::get('dokumen/persiapan/{file}', [PerController::class, 'download']);
+Route::get('dokumen/pelatihan/{file}', [PelatihanController::class, 'download']);
+Route::get('dokumen/pendataan/{file}', [PendataanController::class, 'download']);
+Route::get('dokumen/pengolahan/{file}', [PengolahanController::class, 'download']);
