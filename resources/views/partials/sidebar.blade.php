@@ -1,10 +1,10 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="/"><img class="w-25 rounded" src="/assets/img/logo.png" alt="Logo Regsosek"> Galeri Regsosek</a>
+        <a href="{{route('index')}}"><img class="w-25 rounded" src="{{asset('/assets/img/logo.png')}}" alt="Logo Regsosek"> Galeri Regsosek</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="/"><img class="w-50 rounded" src="/assets/img/logo.png" alt="Logo Regsosek"></a>
+        <a href="{{route('index')}}"><img class="w-50 rounded" src="{{asset('/assets/img/logo.png')}}" alt="Logo Regsosek"></a>
       </div>
       @switch($title)
         @case('Persiapan')

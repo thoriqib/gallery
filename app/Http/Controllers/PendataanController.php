@@ -71,7 +71,7 @@ class PendataanController extends Controller
         return view('pages.table', [
             'title' => 'Pendataan',
             'kecamatan_all' => Kecamatan::all(),
-            'kecamatan' => Kecamatan::where('slug', $kecamatan)->first()->nama,
+            'kecamatan' => Kecamatan::where('slug', $kecamatan)->first(),
             'dir' => "/dokumen/pendataan/",
             'dokumen' => $result
         ]);

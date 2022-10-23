@@ -7,32 +7,32 @@
     </form>
     <ul class="navbar-nav navbar-right d-flex align-items-center">
       <li class="nav-item">
-        <a href="/" class="nav-link nav-link-lg">
+        <a href="{{route('index')}}" class="nav-link nav-link-lg">
             <div class="d-sm-none d-lg-flex align-items-center"><i class="fas fa-home mr-1"></i> Home</div>
         </a>
       </li>
       <li class="nav-item">
-        <a href="/persiapan" class="nav-link nav-link-lg">
+        <a href="{{route('persiapan')}}" class="nav-link nav-link-lg">
             <div class="d-sm-none d-lg-flex align-items-center"><i class="fas fa-tasks mr-1"></i> Persiapan</div>
         </a>
       </li>
       <li class="nav-item">
-        <a href="/pelatihan" class="nav-link nav-link-lg">
+        <a href="{{route('pelatihan')}}" class="nav-link nav-link-lg">
             <div class="d-sm-none d-lg-flex align-items-center"><i class="fas fa-book-open mr-1"></i> Pelatihan</div>
         </a>
       </li>
       <li class="nav-item">
-        <a href="/pendataan" class="nav-link nav-link-lg">
+        <a href="{{route('pendataan')}}" class="nav-link nav-link-lg">
             <div class="d-sm-none d-lg-flex align-items-center"><i class="fas fa-clipboard-list mr-1"></i> Pendataan Lapangan</div>
         </a>
       </li>
       <li class="nav-item">
-        <a href="/pengolahan" class="nav-link nav-link-lg">
+        <a href="{{route('pengolahan')}}" class="nav-link nav-link-lg">
             <div class="d-sm-none d-lg-flex align-items-center"><i class="fas fa-database mr-1"></i> Pengolahan</div>
         </a>
       </li>
       <li class="nav-item">
-        <a href="/upload/gambar" class="nav-link nav-link-lg btn btn-primary">
+        <a href="{{route('upload.image')}}" class="nav-link nav-link-lg btn btn-primary">
             <div class="d-sm-none d-lg-flex align-items-center"><i class="fas fa-upload mr-1"></i>Upload</div>
         </a>
       </li>

@@ -28,7 +28,7 @@
                           </div>
                         @endforeach
                     @endif
-                    <form action="/save/dokumen" method="post" enctype="multipart/form-data">
+                    <form action={{route('save.doc')}} method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="my-2">
                             <label for="">Judul</label>
@@ -77,11 +77,11 @@
                         </select>
                         <select class="custom-select my-2" name="gelombang" id="gelombang" required oninvalid="this.setCustomValidity('Gelombang harus diisi')" oninput="this.setCustomValidity('')">
                             <option value="" selected>--- Pilih Gelombang ---</option>
-                            <option value="I">I</option>
-                            <option value="II">II</option>
-                            <option value="III">III</option>
-                            <option value="IV">IV</option>
-                            <option value="V">V</option>
+                            <option value="I">Gelombang I</option>
+                            <option value="II">Gelombang II</option>
+                            <option value="III">Gelombang III</option>
+                            <option value="IV">Gelombang IV</option>
+                            <option value="V">Gelombang V</option>
                         </select>
                 `)
                 $('#kecamatan').remove();

@@ -28,7 +28,7 @@
                           </div>
                         @endforeach
                     @endif
-                    <form action="/save/gambar" method="post" enctype="multipart/form-data">
+                    <form action={{route('save.image')}} method="post" enctype="multipart/form-data">
                         @csrf
                         
                         <select class="custom-select my-2 @error('kegiatan') is-invalid @enderror" name="kegiatan" id="kegiatan" required oninvalid="this.setCustomValidity('Album harus diisi')" oninput="this.setCustomValidity('')">
@@ -78,11 +78,11 @@
                         </select>
                         <select class="custom-select my-2" name="gelombang" id="gelombang" required oninvalid="this.setCustomValidity('Gelombang harus diisi')" oninput="this.setCustomValidity('')">
                             <option value="" selected>--- Pilih Gelombang ---</option>
-                            <option value="I">I</option>
-                            <option value="II">II</option>
-                            <option value="III">III</option>
-                            <option value="IV">IV</option>
-                            <option value="V">V</option>
+                            <option value="I">Gelombang I</option>
+                            <option value="II">Gelombang II</option>
+                            <option value="III">Gelombang III</option>
+                            <option value="IV">Gelombang IV</option>
+                            <option value="V">Gelombang V</option>
                         </select>
                 `)
                 $('#kecamatan').remove();

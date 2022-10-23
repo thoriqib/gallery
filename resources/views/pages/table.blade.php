@@ -9,7 +9,7 @@
     @isset($hotel)
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/pelatihan/dokumen">{{$title}}</a></li>
+          <li class="breadcrumb-item"><a href="{{route('pelatihan.dokumen')}}">{{$title}}</a></li>
           <li class="breadcrumb-item">{{$hotel}}</li>
           <li class="breadcrumb-item" aria-current="page">{{$gelombang}}</li>
         </ol>
@@ -18,8 +18,8 @@
     @isset($kecamatan)
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/pendataan/dokumen">{{$title}}</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Kecamatan {{$kecamatan}}</li>
+          <li class="breadcrumb-item"><a href="{{route('pendataan.dokumen')}}">{{$title}}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Kecamatan {{$kecamatan->nama}}</li>
         </ol>
       </nav>
     @endisset
@@ -72,16 +72,16 @@
                         <td>
                           @switch($title)
                             @case('Persiapan')
-                              <a href="/dokumen/persiapan/{{$d->nama}}">Unduh</a>
+                              <a href={{asset("/dokumen/persiapan/$d->nama")}}>Unduh</a>
                               @break
                             @case('Pelatihan')
-                              <a href="/dokumen/pelatihan/{{$d->nama}}">Unduh</a>
+                              <a href={{asset("/dokumen/pelatihan/$d->nama")}}>Unduh</a>
                               @break
                             @case('Pendataan')
-                              <a href="/dokumen/pendataan/{{$d->nama}}">Unduh</a>
+                              <a href={{asset("/dokumen/pendataan/$d->nama")}}>Unduh</a>
                               @break
                             @case('Pengolahan')
-                              <a href="/dokumen/pengolahan/{{$d->nama}}">Unduh</a>
+                              <a href={{asset("/dokumen/pengolahan/$d->nama")}}>Unduh</a>
                               @break
                             @default
                           @endswitch

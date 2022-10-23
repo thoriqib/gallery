@@ -7,7 +7,7 @@
       opacity: 1;
       display: block;
       width: 100%;
-      height: 125px;
+      height: 150px;
       transition: .5s ease;
       backface-visibility: hidden;
       object-fit: cover;
@@ -28,7 +28,7 @@
     @isset($hotel)
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/pelatihan">{{$title}}</a></li>
+          <li class="breadcrumb-item"><a href="{{route('pelatihan')}}">{{$title}}</a></li>
           <li class="breadcrumb-item">{{$hotel}}</li>
           <li class="breadcrumb-item" aria-current="page">{{$gelombang}}</li>
         </ol>
@@ -37,8 +37,8 @@
     @isset($kecamatan)
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/pendataan">{{$title}}</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Kecamatan {{$kecamatan}}</li>
+          <li class="breadcrumb-item"><a href="{{route('pendataan')}}">{{$title}}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Kecamatan {{$kecamatan->nama}}</li>
         </ol>
       </nav>
     @endisset
@@ -56,7 +56,7 @@
           @if ($gambar->firstItem())
             @foreach ($gambar as $g)
               <div class="col-lg-3 col-md-4 col-sm-6 my-2">
-                <img class="w-100 rounded gambar" src="{{$dir.$g->nama}}" id="{{$g->id}}"/>
+                <img class="w-100 rounded gambar" src="{{asset($dir.$g->nama)}}" id="{{$g->id}}"/>
               </div>
             @endforeach
           </div>
@@ -95,7 +95,7 @@
       $('#{{$g->id}}').fireModal({
         title: title,
         body: `
-        <img class='w-100' src='{{$dir.$g->nama}}'/>
+        <img class='w-100' src='{{asset($dir.$g->nama)}}'/>
           <div class="card rounded">
             <div class="card-body">
               <p class="card-text">{{$g->deskripsi}}</p>
