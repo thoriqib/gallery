@@ -40,7 +40,7 @@ class UploadController extends Controller
             $request,
             [
                 'gambar' => 'required',
-                'gambar.*' => 'image|file',
+                'gambar.*' => 'image|file|max:5120',
                 'deskripsi' => 'required',
                 'kegiatan' => 'required|in:1,2,3,4',
             ],
@@ -48,7 +48,8 @@ class UploadController extends Controller
                 'required' => 'Kolom :attribute harus diisi',
                 'image' => 'File harus berupa gambar',
                 'kegiatan.in' => 'Isian album harus valid',
-                'file' => 'Isian harus berupa file'
+                'file' => 'Isian harus berupa file',
+                'max' => 'Ukuran gambar tidak boleh lebih dari 5 MB'
             ]
         );
         $kegiatan = $request->kegiatan;
@@ -126,7 +127,7 @@ class UploadController extends Controller
             $request,
             [
                 'dokumen' => 'required',
-                'dokumen.*' => 'file|mimes:pdf',
+                'dokumen.*' => 'file|mimes:pdf|max:5120',
                 'judul' => 'required',
                 'kegiatan' => 'required|in:1,2,3,4',
             ],
@@ -134,7 +135,8 @@ class UploadController extends Controller
                 'required' => 'Kolom :attribute harus diisi',
                 'kegiatan.in' => 'Isian kegiatan harus valid',
                 'file' => 'Isian harus berupa file',
-                'mimes' => 'File harus berupa PDF'
+                'mimes' => 'File harus berupa PDF',
+                'max' => 'Ukuran gambar tidak boleh lebih dari 5 MB'
             ]
         );
         $kegiatan = $request->kegiatan;
