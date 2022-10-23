@@ -109,7 +109,9 @@
             $.destroyModal(current_modal);
             }
           }
-        ]
+        ],
+        center: true,
+        size: 'modal-xl'
       });
     @endforeach
 </script>
