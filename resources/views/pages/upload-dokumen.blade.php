@@ -32,7 +32,7 @@
                         @csrf
                         <div class="my-2">
                             <label for="">Judul</label>
-                            <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" placeholder="Tuliskan Judul..." name="judul" oninvalid="this.setCustomValidity('Judul harus diisi')" oninput="this.setCustomValidity('')"></input>
+                            <input type="text" class="form-control @error('judul') is-invalid @enderror" id="judul" placeholder="Tuliskan Judul..." name="judul" oninvalid="this.setCustomValidity('Judul harus diisi')" oninput="this.setCustomValidity('')" value="{{old('judul')}}"/>
                         </div>
                         <select class="custom-select my-2 @error('kegiatan') is-invalid @enderror" name="kegiatan" id="kegiatan" required oninvalid="this.setCustomValidity('Album harus diisi')" oninput="this.setCustomValidity('')">
                             <option value="" selected>--- Pilih Kegiatan ---</option>

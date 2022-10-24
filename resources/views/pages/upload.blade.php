@@ -44,7 +44,7 @@
                         </div>
                         <div class="my-3">
                             <label for="">Deskripsi</label>
-                            <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" rows="5" placeholder="Tuliskan Deskripsi..." name="deskripsi" oninvalid="this.setCustomValidity('Deskripsi harus diisi')" oninput="this.setCustomValidity('')"></textarea>
+                            <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" rows="5" placeholder="Tuliskan Deskripsi..." name="deskripsi" oninvalid="this.setCustomValidity('Deskripsi harus diisi')" oninput="this.setCustomValidity('')" value="{{old('deskripsi')}}"></textarea>
                         </div>
                         <button class="btn btn-success float-right" type="submit" id="btnUpload">Upload</button>
                     </form>
