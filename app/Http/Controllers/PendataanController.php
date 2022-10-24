@@ -17,7 +17,7 @@ class PendataanController extends Controller
             'title' => 'Pendataan',
             'kecamatan_all' => Kecamatan::all(),
             'dir' => "/gambar/pendataan/",
-            'gambar' => Gambar::where('kegiatan_id', 3)->paginate(12)
+            'gambar' => Gambar::where('kegiatan_id', 3)->paginate(40)
         ]);
     }
 
@@ -27,7 +27,7 @@ class PendataanController extends Controller
             'title' => 'Pendataan',
             'kecamatan_all' => Kecamatan::all(),
             'dir' => "/dokumen/pendataan/",
-            'dokumen' => Dokumen::where('kegiatan_id', 3)->paginate(12)
+            'dokumen' => Dokumen::where('kegiatan_id', 3)->paginate(10)
         ]);
     }
 
@@ -42,7 +42,7 @@ class PendataanController extends Controller
             }
         };
 
-        $result = $this->paginate($result);
+        $result = $this->paginate($result, 40);
         $result->withPath("/pendataan/$kecamatan");
 
         return view('pages.gallery', [
@@ -77,7 +77,7 @@ class PendataanController extends Controller
         ]);
     }
 
-    public function paginate($items, $perPage = 12, $page = null, $options = [])
+    public function paginate($items, $perPage = 10, $page = null, $options = [])
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
         $items = $items instanceof Collection ? $items : Collection::make($items);

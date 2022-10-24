@@ -12,7 +12,7 @@ class PengolahanController extends Controller
         return view('pages.gallery', [
             'title' => 'Pengolahan',
             'dir' => "/gambar/pengolahan/",
-            'gambar' => Gambar::where('kegiatan_id', 4)->paginate(12)
+            'gambar' => Gambar::where('kegiatan_id', 4)->paginate(40)
         ]);
     }
 
@@ -21,7 +21,7 @@ class PengolahanController extends Controller
         return view('pages.table', [
             'title' => 'Pengolahan',
             'dir' => "/dokumen/pengolahan/",
-            'dokumen' => Dokumen::where('kegiatan_id', 4)->paginate(12)
+            'dokumen' => Dokumen::where('kegiatan_id', 4)->paginate(10)
         ]);
     }
 

@@ -12,7 +12,7 @@ class PersiapanController extends Controller
         return view('pages.gallery', [
             'title' => 'Persiapan',
             'dir' => "/gambar/persiapan/",
-            'gambar' => Gambar::where('kegiatan_id', 1)->paginate(12)
+            'gambar' => Gambar::where('kegiatan_id', 1)->paginate(40)
         ]);
     }
 
@@ -21,7 +21,7 @@ class PersiapanController extends Controller
         return view('pages.table', [
             'title' => 'Persiapan',
             'dir' => "/dokumen/persiapan/",
-            'dokumen' => Dokumen::where('kegiatan_id', 1)->paginate(12)
+            'dokumen' => Dokumen::where('kegiatan_id', 1)->paginate(10)
         ]);
     }
 

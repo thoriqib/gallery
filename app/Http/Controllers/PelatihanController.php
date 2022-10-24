@@ -17,7 +17,7 @@ class PelatihanController extends Controller
         return view('pages.gallery', [
             'title' => 'Pelatihan',
             'dir' => "/gambar/pelatihan/",
-            'gambar' => Gambar::where('kegiatan_id', 2)->paginate(12),
+            'gambar' => Gambar::where('kegiatan_id', 2)->paginate(40),
             'tc' => TC::all()
         ]);
     }
@@ -27,7 +27,7 @@ class PelatihanController extends Controller
         return view('pages.table', [
             'title' => 'Pelatihan',
             'dir' => "/dokumen/pelatihan/",
-            'dokumen' => Dokumen::where('kegiatan_id', 2)->paginate(12),
+            'dokumen' => Dokumen::where('kegiatan_id', 2)->paginate(10),
             'tc' => TC::all()
         ]);
     }
@@ -43,7 +43,7 @@ class PelatihanController extends Controller
             }
         };
 
-        $result = $this->paginate($result);
+        $result = $this->paginate($result, 40);
         $result->withPath("/pelatihan/$hotel/$gelombang");
 
         switch ($hotel) {
@@ -116,7 +116,7 @@ class PelatihanController extends Controller
         ]);
     }
 
-    public function paginate($items, $perPage = 12, $page = null, $options = [])
+    public function paginate($items, $perPage = 10, $page = null, $options = [])
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
         $items = $items instanceof Collection ? $items : Collection::make($items);
