@@ -44,7 +44,7 @@ class PelatihanController extends Controller
         };
 
         $result = $this->paginate($result, 40);
-        $result->withPath("/pelatihan/$hotel/$gelombang");
+        $result->withPath(route('pelatihan.tc', ['hotel' => $hotel, 'gelombang' => $gelombang]));
 
         switch ($hotel) {
             case 'belviu':
@@ -86,7 +86,7 @@ class PelatihanController extends Controller
         };
 
         $result = $this->paginate($result);
-        $result->withPath("/pelatihan/dokumen/$hotel/$gelombang");
+        $result->withPath(route('pelatihan.dokumen.tc', ['hotel' => $hotel, 'gelombang' => $gelombang]));
 
         switch ($hotel) {
             case 'belviu':

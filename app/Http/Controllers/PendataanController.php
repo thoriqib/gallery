@@ -43,7 +43,7 @@ class PendataanController extends Controller
         };
 
         $result = $this->paginate($result, 40);
-        $result->withPath("/pendataan/$kecamatan");
+        $result->withPath(route('pendataan.kecamatan', ['kecamatan' => $kecamatan]));
 
         return view('pages.gallery', [
             'title' => 'Pendataan',
@@ -66,7 +66,7 @@ class PendataanController extends Controller
         };
 
         $result = $this->paginate($result);
-        $result->withPath("/pendataan/dokumen/$kecamatan");
+        $result->withPath(route('pendataan.dokumen.kecamatan', ['kecamatan' => $kecamatan]));
 
         return view('pages.table', [
             'title' => 'Pendataan',
